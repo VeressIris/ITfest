@@ -32,30 +32,131 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/habitDiv"
                 android:layout_width="match_parent"
-                android:layout_height="143dp"
-                android:orientation="horizontal">
+                android:layout_height="290dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/habitTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Habit" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/habitChip"
+                        android:layout_width="52dp"
+                        android:layout_height="wrap_content"
+                        android:checkable="true" />
+
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/habitTitle"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/frequencyTitle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Habit" />
+                    android:text="Frequency" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/habitChip"
-                    android:layout_width="52dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checkable="true" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dailyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Daily" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/dailyChip"
+                        android:layout_width="52dp"
+                        android:layout_height="wrap_content"
+                        android:checkable="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="204dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Days of the week" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/daysOfTheWeekChip"
+                        android:layout_width="52dp"
+                        android:layout_height="wrap_content"
+                        android:checkable="true" />
 
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/daysOfTheWeekListDiv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxMonday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxTuesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tuesday" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxWednesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wednesday" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxThursday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thursday" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxFriday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Friday" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxSaturday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saturday" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxSunday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sunday" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/toDoDiv"
                 android:layout_width="match_parent"
-                android:layout_height="121dp"
+                android:layout_height="221dp"
                 android:orientation="horizontal">
 
                 <TextView
