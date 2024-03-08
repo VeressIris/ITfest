@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -23,55 +24,61 @@
         <TextView
             android:id="@+id/trackingTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="What would you like to add" />
+            android:layout_height="55dp"
+            android:background="#6D6875"
+            android:text="What would you like to add"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:id="@+id/trackContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#6D6875"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="249dp"
+                android:layout_height="223dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:background="#C8C7D7"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/habitTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Habit" />
+                        android:text="Habit"
+                        android:textColor="#000000" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/habitChip"
                         android:layout_width="52dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="60dp"
                         android:checkable="true" />
 
-
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frequencyTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#F4EDE5"
+                    android:text="Frequency"
+                    android:textColor="#000000" />
 
                 <LinearLayout
                     android:id="@+id/frequencyDiv"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="visible">
-
-                    <TextView
-                        android:id="@+id/frequencyTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Frequency" />
+                    android:layout_height="wrap_content"
+                    android:background="#F4EDE5"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/dailyDiv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -81,7 +88,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Daily" />
+                            android:text="Daily"
+                            android:textColor="#000000" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/dailyChip"
@@ -100,8 +108,8 @@
                             android:id="@+id/textView9"
                             android:layout_width="204dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Days of the week" />
+                            android:text="Days of the week"
+                            android:textColor="#000000" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/daysOfTheWeekChip"
@@ -109,58 +117,60 @@
                             android:layout_height="wrap_content"
                             android:checkable="true" />
 
-
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/daysOfTheWeekListDiv"
                         android:layout_width="match_parent"
-                        android:layout_height="86dp"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <CheckBox
                             android:id="@+id/checkboxMonday"
-                            android:layout_width="wrap_content"
+                            android:layout_width="68dp"
                             android:layout_height="wrap_content"
+                            android:backgroundTint="#673AB7"
                             android:text="M"
-                            android:visibility="visible" />
+                            android:visibility="visible"
+                            app:buttonIconTint="#6D6875" />
 
                         <CheckBox
                             android:id="@+id/checkboxTuesday"
-                            android:layout_width="wrap_content"
+                            android:layout_width="68dp"
                             android:layout_height="wrap_content"
                             android:text="T"
-                            android:visibility="visible" />
+                            android:visibility="visible"
+                            app:buttonIconTint="#6D6875" />
 
                         <CheckBox
                             android:id="@+id/checkboxWednesday"
-                            android:layout_width="wrap_content"
+                            android:layout_width="68dp"
                             android:layout_height="wrap_content"
-                            android:text="W" />
+                            android:text="W"
+                            app:buttonIconTint="#6D6875" />
 
                         <CheckBox
                             android:id="@+id/checkboxThursday"
-                            android:layout_width="wrap_content"
+                            android:layout_width="68dp"
                             android:layout_height="wrap_content"
-                            android:text="T" />
-
-                        <CheckBox
-                            android:id="@+id/checkboxFriday"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F" />
+                            android:text="T"
+                            app:buttonIconTint="#6D6875" />
 
                         <CheckBox
                             android:id="@+id/checkboxSaturday"
-                            android:layout_width="wrap_content"
+                            android:layout_width="68dp"
                             android:layout_height="wrap_content"
-                            android:text="Sa" />
+                            android:text="Sa"
+                            app:buttonIconTint="#6D6875" />
 
                         <CheckBox
                             android:id="@+id/checkboxSunday"
-                            android:layout_width="wrap_content"
+                            android:layout_width="68dp"
                             android:layout_height="wrap_content"
-                            android:text="Su" />
+                            android:baselineAligned="false"
+                            android:buttonTint="#6D6875"
+                            android:text="Su"
+                            app:buttonIconTint="#6D6875" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -169,117 +179,104 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#C8C7D7"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toDoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To-do"
+                    android:textColor="#000000" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/todoChip"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:checkable="true" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/todoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#D8E2EB"
+                    android:hint="hint"
+                    android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="#C8C7D7"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/moodTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mood"
+                    android:textColor="#000000" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/moodChip"
+                    android:layout_width="52dp"
+                    android:layout_height="65dp"
+                    android:checkable="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/moodOptionsDiv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/toDoDiv"
+                    android:id="@+id/selectMoodsDiv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/toDoTitle"
+                    <CheckBox
+                        android:id="@+id/sadCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="To-do" />
+                        android:layout_weight="1"
+                        android:text="sad" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/todoChip"
-                        android:layout_width="52dp"
+                    <CheckBox
+                        android:id="@+id/mehCheckbox"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:checkable="true" />
+                        android:layout_weight="1"
+                        android:text="meh" />
+
+                    <CheckBox
+                        android:id="@+id/happyCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="happy" />
 
                 </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/todoText"
+                    android:id="@+id/moodMessage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
+                        android:layout_width="408dp"
                         android:layout_height="wrap_content"
                         android:hint="hint" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <LinearLayout
-                    android:id="@+id/moodDiv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/moodTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mood" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/moodChip"
-                        android:layout_width="52dp"
-                        android:layout_height="wrap_content"
-                        android:checkable="true" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/moodOptionsDiv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/selectMoodsDiv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <CheckBox
-                            android:id="@+id/sadCheckBox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="sad" />
-
-                        <CheckBox
-                            android:id="@+id/mehCheckbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="meh" />
-
-                        <CheckBox
-                            android:id="@+id/happyCheckbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="happy" />
-
-                    </LinearLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/moodMessage"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="408dp"
-                            android:layout_height="wrap_content"
-                            android:hint="hint" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
         </LinearLayout>
 
     </LinearLayout>
