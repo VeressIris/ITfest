@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.itfest.databinding.FragmentStatsBinding
 
-class NotificationsFragment : Fragment() {
+class StatsFragment : Fragment() {
 
     private var _binding: FragmentStatsBinding? = null
 
