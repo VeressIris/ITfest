@@ -37,10 +37,10 @@ class TrackFragment : AppCompatActivity() {
 
     fun setButtonListeners() {
         val habitChipBttn = findViewById<Chip>(R.id.habitChip)
-        val frequencyDiv = findViewById<LinearLayout>(R.id.frequencyDiv)
-        makeInvisible(frequencyDiv)
+        val habitDetailsDiv = findViewById<LinearLayout>(R.id.habitDetailsDiv)
+        makeInvisible(habitDetailsDiv)
         habitChipBttn.setOnClickListener {
-            openSpecificDiv(frequencyDiv, habitChipBttn)
+            openSpecificDiv(habitDetailsDiv, habitChipBttn)
         }
 
         val daysOfTheWeekChip = findViewById<Chip>(R.id.daysOfTheWeekChip)
@@ -51,7 +51,7 @@ class TrackFragment : AppCompatActivity() {
         }
 
         val todoChip = findViewById<Chip>(R.id.todoChip)
-        val todoMessage = findViewById<TextInputLayout>(R.id.todoText)
+        val todoMessage = findViewById<TextInputLayout>(R.id.toDoInput)
         makeInvisible(todoMessage)
         todoChip.setOnClickListener {
             openSpecificDiv(todoMessage, todoChip)
