@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.itfest.R
 import com.example.itfest.databinding.FragmentAnimalBinding
-import com.example.itfest.databinding.FragmentStatsBinding
 
 class PetFragment : Fragment() {
 
@@ -31,7 +30,6 @@ class PetFragment : Fragment() {
         _binding = FragmentAnimalBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
         // Get references to your ImageView elements
         val imageViewToChange: ImageView = binding.imageViewbase // Replace with your ImageView ID
         val thirstProgressBar: ProgressBar = binding.progressBar
@@ -39,21 +37,22 @@ class PetFragment : Fragment() {
         val happinessProgressBar: ProgressBar = binding.progressBar3
 
         // Change the image based on the progress levels
-        if (thirstProgressBar.progress < 50 ) {
+        if (thirstProgressBar.progress < 50) {
             // Load the new image from the folder
-            val newImage = resources.getIdentifier("image_name", "drawable", requireContext().packageName)
+            val newImage = resources.getIdentifier("thirst", "drawable", requireContext().packageName)
             imageViewToChange.setImageResource(newImage)
-        if(hungerProgressBar.progress < 50)
-
-        if( happinessProgressBar.progress < 50)
-
+        } else if (hungerProgressBar.progress < 50) {
+            val newImage = resources.getIdentifier("hunger", "drawable", requireContext().packageName)
+            imageViewToChange.setImageResource(newImage)
+        } else if (happinessProgressBar.progress < 50) {
+            val newImage = resources.getIdentifier("ok", "drawable", requireContext().packageName)
+            imageViewToChange.setImageResource(newImage)
         } else {
             // If none of the progress levels are below 50, set the default image
-            imageViewToChange.setImageResource(R.drawable.default_image) // Replace with your default image resource ID
+            imageViewToChange.setImageResource(R.drawable.base)
         }
 
         return root
-    }
     }
 
     override fun onDestroyView() {
