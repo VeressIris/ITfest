@@ -1,6 +1,5 @@
 package com.example.itfest.ui
 
-import com.google.gson.Gson
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,13 +13,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.itfest.R
 import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputLayout
-import com.example.itfest.Habit
-import java.io.File
-import java.io.FileWriter
-import java.io.PrintWriter
-import java.nio.charset.Charset
-import java.nio.file.Paths
-
 
 class TrackFragment : AppCompatActivity() {
     var habitChipBttn :Chip? = null
@@ -83,26 +75,6 @@ class TrackFragment : AppCompatActivity() {
                 Log.i(day.toString(), "day")
             }
         }
-        val habit = Habit("djjd", false, "daily")
-    }
-
-    fun isFilePathValid(filePath: String): Boolean {
-        val file = File(filePath)
-        val parentDir = file.parentFile
-
-        // Check if parent directory exists and is a directory
-        if (parentDir != null && parentDir.exists() && parentDir.isDirectory) {
-            // Check if file can be created
-            return try {
-                file.createNewFile()
-                file.delete() // Delete the file if created successfully
-                true
-            } catch (e: Exception) {
-                false
-            }
-        }
-
-        return false
     }
 
     fun getDaysOfTheWeek() : MutableList<Int> {
@@ -146,6 +118,7 @@ class TrackFragment : AppCompatActivity() {
         makeInvisible(daysOfTheWeekList!!)
         daysOfTheWeekChip!!.setOnClickListener {
             openSpecificDiv(daysOfTheWeekList!!, daysOfTheWeekChip!!)
+            keepOneThingChecked(daysOfTheWeekChip!!)
         }
 
         makeInvisible(todoMessage!!)
