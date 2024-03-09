@@ -116,7 +116,7 @@
 
                             <TextView
                                 android:id="@+id/dailyText"
-                                android:layout_width="275dp"
+                                android:layout_width="238dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:paddingLeft="13dp"
@@ -214,7 +214,6 @@
                                 android:background="@drawable/rounded_corners"
                                 android:backgroundTint="#9E7777"
                                 android:baselineAligned="false"
-                                android:buttonTint="#6D6875"
                                 android:clickable="true"
                                 android:text="Fr"
                                 app:buttonIconTint="#6D6875" />
@@ -243,7 +242,6 @@
                                 android:background="@drawable/rounded_corners"
                                 android:backgroundTint="#9E7777"
                                 android:baselineAligned="false"
-                                android:buttonTint="#6D6875"
                                 android:clickable="true"
                                 android:text="Su"
                                 app:buttonIconTint="#6D6875" />
@@ -337,7 +335,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/rounded_corners"
                         android:backgroundTint="#9E7777"
-                        android:text="sad" />
+                        android:text="sad"
+                        app:buttonIconTint="#6D6875" />
 
                     <CheckBox
                         android:id="@+id/mehCheckbox"
@@ -346,7 +345,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/rounded_corners"
                         android:backgroundTint="#9E7777"
-                        android:text="meh" />
+                        android:text="meh"
+                        app:buttonIconTint="#6D6875" />
 
                     <CheckBox
                         android:id="@+id/happyCheckbox"
@@ -355,7 +355,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/rounded_corners"
                         android:backgroundTint="#9E7777"
-                        android:text="happy" />
+                        android:text="happy"
+                        app:buttonIconTint="#6D6875" />
 
                 </LinearLayout>
 
