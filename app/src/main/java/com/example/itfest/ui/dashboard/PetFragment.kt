@@ -30,27 +30,27 @@ class PetFragment : Fragment() {
         _binding = FragmentAnimalBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Get references to your ImageView elements
-        val imageViewToChange: ImageView = binding.imageViewbase // Replace with your ImageView ID
-        val thirstProgressBar: ProgressBar = binding.progressBar
-        val hungerProgressBar: ProgressBar = binding.progressBar2
-        val happinessProgressBar: ProgressBar = binding.progressBar3
-
-        // Change the image based on the progress levels
-        if (thirstProgressBar.progress < 50) {
-            // Load the new image from the folder
-            val newImage = resources.getIdentifier("thirst", "drawable", requireContext().packageName)
-            imageViewToChange.setImageResource(newImage)
-        } else if (hungerProgressBar.progress < 50) {
-            val newImage = resources.getIdentifier("hunger", "drawable", requireContext().packageName)
-            imageViewToChange.setImageResource(newImage)
-        } else if (happinessProgressBar.progress < 50) {
-            val newImage = resources.getIdentifier("ok", "drawable", requireContext().packageName)
-            imageViewToChange.setImageResource(newImage)
-        } else {
-            // If none of the progress levels are below 50, set the default image
-            imageViewToChange.setImageResource(R.drawable.base)
-        }
+//        // Get references to your ImageView elements
+//        val imageViewToChange: ImageView = binding.imageViewbase // Replace with your ImageView ID
+//        val thirstProgressBar: ProgressBar = binding.progressBar
+//        val hungerProgressBar: ProgressBar = binding.progressBar2
+//        val happinessProgressBar: ProgressBar = binding.progressBar3
+//
+//        // Change the image based on the progress levels
+//        if (thirstProgressBar.progress < 50) {
+//            // Load the new image from the folder
+//            val newImage = resources.getIdentifier("thirst", "drawable", requireContext().packageName)
+//            imageViewToChange.setImageResource(newImage)
+//        } else if (hungerProgressBar.progress < 50) {
+//            val newImage = resources.getIdentifier("hunger", "drawable", requireContext().packageName)
+//            imageViewToChange.setImageResource(newImage)
+//        } else if (happinessProgressBar.progress < 50) {
+//            val newImage = resources.getIdentifier("ok", "drawable", requireContext().packageName)
+//            imageViewToChange.setImageResource(newImage)
+//        } else {
+//            // If none of the progress levels are below 50, set the default image
+//            imageViewToChange.setImageResource(R.drawable.base)
+//        }
 
         return root
     }

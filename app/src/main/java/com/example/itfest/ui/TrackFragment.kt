@@ -1,7 +1,10 @@
 package com.example.itfest.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +23,7 @@ class TrackFragment : AppCompatActivity() {
     var todoMessage: TextInputLayout? = null
     var moodChip: Chip? = null
     var moodDiv: LinearLayout? = null
+    var addTaskBttn: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,16 +35,63 @@ class TrackFragment : AppCompatActivity() {
             insets
         }
 
-        habitChipBttn = findViewById<Chip>(R.id.habitChip)
-        habitDetailsDiv = findViewById<LinearLayout>(R.id.habitDetailsDiv)
-        daysOfTheWeekChip = findViewById<Chip>(R.id.daysOfTheWeekChip)
-        daysOfTheWeekList = findViewById<LinearLayout>(R.id.daysOfTheWeekListDiv)
-        todoChip = findViewById<Chip>(R.id.todoChip)
-        todoMessage = findViewById<TextInputLayout>(R.id.toDoInput)
-        moodChip = findViewById<Chip>(R.id.moodChip)
-        moodDiv = findViewById<LinearLayout>(R.id.moodOptionsDiv)
+        //initializing everything we need
+        habitChipBttn = findViewById(R.id.habitChip)
+        habitDetailsDiv = findViewById(R.id.habitDetailsDiv)
+        daysOfTheWeekChip = findViewById(R.id.daysOfTheWeekChip)
+        daysOfTheWeekList = findViewById(R.id.daysOfTheWeekListDiv)
+        todoChip = findViewById(R.id.todoChip)
+        todoMessage = findViewById(R.id.toDoInput)
+        moodChip = findViewById(R.id.moodChip)
+        moodDiv = findViewById(R.id.moodOptionsDiv)
+        addTaskBttn = findViewById(R.id.addBttn)
 
         setButtonListeners()
+
+        addTaskBttn!!.setOnClickListener {
+            val checkedBttn = checkWhoIsChecked()
+            when(checkedBttn) {
+                habitChipBttn -> {
+                    createHabit()
+                }
+                todoChip -> {
+
+                }
+                moodChip -> {
+
+                }
+            }
+        }
+    }
+
+    fun createHabit() {
+        //get habit name
+        val habitNameInput = findViewById<TextInputLayout>(R.id.habitNameInput)
+        val habitName = habitNameInput.editText?.text.toString()
+        val frequency: String? = null
+        if (daysOfTheWeekChip!!.isChecked) {
+            val checkedDays = getDaysOfTheWeek()
+            for (day in checkedDays) {
+                Log.i(day.toString(), "day")
+            }
+        }
+    }
+
+    fun getDaysOfTheWeek() : MutableList<Int> {
+        val list: MutableList<Int> = mutableListOf()
+        for (i in 0 until daysOfTheWeekList!!.childCount) {
+            val day = daysOfTheWeekList!!.getChildAt(i)
+            if (day is CheckBox) {
+                if (day.isChecked) {
+                    list.add(i)
+                }
+            }
+        }
+        return list
+    }
+
+    fun getCheckedDays() {
+
     }
 
     fun openSpecificDiv(div: LinearLayout, chipBttn: Chip) {
@@ -83,18 +134,31 @@ class TrackFragment : AppCompatActivity() {
         }
     }
 
+    //returns button that is checked
+    fun checkWhoIsChecked() : Chip? {
+        if (habitChipBttn!!.isChecked) return habitChipBttn!!
+        if (todoChip!!.isChecked) return todoChip!!
+        if (moodChip!!.isChecked) return moodChip!!
+        return null
+    }
+
     fun keepOneThingChecked(bttnPressed: Chip) {
-        if (habitChipBttn!!.isChecked && bttnPressed != habitChipBttn) {
-            habitChipBttn!!.isChecked = false
-            closeSpecificDiv(habitDetailsDiv!!)
-        }
-        else if (todoChip!!.isChecked && bttnPressed != todoChip) {
-            todoChip!!.isChecked = false
-            closeSpecificDiv(todoMessage!!)
-        }
-        else if (moodChip!!.isChecked && bttnPressed != moodChip) {
-            moodChip!!.isChecked = false
-            closeSpecificDiv(moodDiv!!)
+        val checkedBttn = checkWhoIsChecked()
+        if (checkedBttn != bttnPressed) {
+            when(checkedBttn) {
+                habitChipBttn -> {
+                    habitChipBttn!!.isChecked = false
+                    closeSpecificDiv(habitDetailsDiv!!)
+                }
+                todoChip -> {
+                    todoChip!!.isChecked = false
+                    closeSpecificDiv(todoMessage!!)
+                }
+                moodChip -> {
+                    moodChip!!.isChecked = false
+                    closeSpecificDiv(moodDiv!!)
+                }
+            }
         }
     }
 

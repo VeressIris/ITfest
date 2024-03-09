@@ -113,12 +113,5 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/__removebg_preview4"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="487dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
