@@ -19,6 +19,8 @@ import java.io.File
 import java.io.FileWriter
 import java.io.PrintWriter
 import java.nio.charset.Charset
+import java.nio.file.Paths
+
 
 class TrackFragment : AppCompatActivity() {
     var habitChipBttn :Chip? = null
@@ -82,8 +84,6 @@ class TrackFragment : AppCompatActivity() {
             }
         }
         val habit = Habit("djjd", false, "daily")
-        val jsonString = Gson().toJson(habit)
-        Log.i("muie", jsonString)
     }
 
     fun isFilePathValid(filePath: String): Boolean {
