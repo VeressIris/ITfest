@@ -63,7 +63,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/habitChip"
                         android:layout_width="52dp"
-                        android:layout_height="60dp"
+                        android:layout_height="52dp"
                         android:checkable="true" />
 
                 </LinearLayout>
@@ -116,7 +116,7 @@
 
                             <TextView
                                 android:id="@+id/dailyText"
-                                android:layout_width="238dp"
+                                android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:paddingLeft="13dp"
@@ -280,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_corners"
                     android:backgroundTint="#DEBA9D"
-                    android:hint="hint"
+                    android:hint="To-do:"
                     android:textColor="#000000" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -303,7 +303,7 @@
                 <com.google.android.material.chip.Chip
                     android:id="@+id/moodChip"
                     android:layout_width="52dp"
-                    android:layout_height="65dp"
+                    android:layout_height="52dp"
                     android:checkable="true" />
             </LinearLayout>
 
@@ -313,7 +313,8 @@
                 android:layout_height="43dp"
                 android:background="@drawable/rounded_corners"
                 android:orientation="vertical"
-                android:translationY="100dp">
+                android:translationY="100dp"
+                android:visibility="visible">
 
                 <LinearLayout
                     android:id="@+id/selectMoodsDiv"
@@ -356,13 +357,19 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/moodMessage"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:translationY="100dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="408dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="hint" />
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#DEBA9D"
+                        android:hint="To-do:"
+                        android:textColor="#000000" />
                 </com.google.android.material.textfield.TextInputLayout>
+
 
             </LinearLayout>
         </LinearLayout>
