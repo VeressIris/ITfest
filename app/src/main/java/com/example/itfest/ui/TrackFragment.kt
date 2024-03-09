@@ -12,6 +12,15 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputLayout
 
 class TrackFragment : AppCompatActivity() {
+    var habitChipBttn :Chip? = null
+    var habitDetailsDiv :LinearLayout? = null
+    var daysOfTheWeekChip :Chip? = null
+    var daysOfTheWeekList :LinearLayout? = null
+    var todoChip :Chip? = null
+    var todoMessage: TextInputLayout? = null
+    var moodChip: Chip? = null
+    var moodDiv: LinearLayout? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,8 +31,16 @@ class TrackFragment : AppCompatActivity() {
             insets
         }
 
-        setButtonListeners()
+        habitChipBttn = findViewById<Chip>(R.id.habitChip)
+        habitDetailsDiv = findViewById<LinearLayout>(R.id.habitDetailsDiv)
+        daysOfTheWeekChip = findViewById<Chip>(R.id.daysOfTheWeekChip)
+        daysOfTheWeekList = findViewById<LinearLayout>(R.id.daysOfTheWeekListDiv)
+        todoChip = findViewById<Chip>(R.id.todoChip)
+        todoMessage = findViewById<TextInputLayout>(R.id.toDoInput)
+        moodChip = findViewById<Chip>(R.id.moodChip)
+        moodDiv = findViewById<LinearLayout>(R.id.moodOptionsDiv)
 
+        setButtonListeners()
     }
 
     fun openSpecificDiv(div: LinearLayout, chipBttn: Chip) {
@@ -35,33 +52,49 @@ class TrackFragment : AppCompatActivity() {
         }
     }
 
+    fun closeSpecificDiv(div: LinearLayout) {
+        div.visibility = View.INVISIBLE
+    }
+
+
     fun setButtonListeners() {
-        val habitChipBttn = findViewById<Chip>(R.id.habitChip)
-        val habitDetailsDiv = findViewById<LinearLayout>(R.id.habitDetailsDiv)
-        makeInvisible(habitDetailsDiv)
-        habitChipBttn.setOnClickListener {
-            openSpecificDiv(habitDetailsDiv, habitChipBttn)
+        makeInvisible(habitDetailsDiv!!)
+        habitChipBttn!!.setOnClickListener {
+            openSpecificDiv(habitDetailsDiv!!, habitChipBttn!!)
+            keepOneThingChecked(habitChipBttn!!)
         }
 
-        val daysOfTheWeekChip = findViewById<Chip>(R.id.daysOfTheWeekChip)
-        val daysOfTheWeekList = findViewById<LinearLayout>(R.id.daysOfTheWeekListDiv)
-        makeInvisible(daysOfTheWeekList)
-        daysOfTheWeekChip.setOnClickListener {
-            openSpecificDiv(daysOfTheWeekList, daysOfTheWeekChip)
+        makeInvisible(daysOfTheWeekList!!)
+        daysOfTheWeekChip!!.setOnClickListener {
+            openSpecificDiv(daysOfTheWeekList!!, daysOfTheWeekChip!!)
+            keepOneThingChecked(daysOfTheWeekChip!!)
         }
 
-        val todoChip = findViewById<Chip>(R.id.todoChip)
-        val todoMessage = findViewById<TextInputLayout>(R.id.toDoInput)
-        makeInvisible(todoMessage)
-        todoChip.setOnClickListener {
-            openSpecificDiv(todoMessage, todoChip)
+        makeInvisible(todoMessage!!)
+        todoChip!!.setOnClickListener {
+            openSpecificDiv(todoMessage!!, todoChip!!)
+            keepOneThingChecked(todoChip!!)
         }
 
-        val moodChip = findViewById<Chip>(R.id.moodChip)
-        val moodDiv = findViewById<LinearLayout>(R.id.moodOptionsDiv)
-        makeInvisible(moodDiv)
-        moodChip.setOnClickListener {
-            openSpecificDiv(moodDiv, moodChip)
+        makeInvisible(moodDiv!!)
+        moodChip!!.setOnClickListener {
+            openSpecificDiv(moodDiv!!, moodChip!!)
+            keepOneThingChecked(moodChip!!)
+        }
+    }
+
+    fun keepOneThingChecked(bttnPressed: Chip) {
+        if (habitChipBttn!!.isChecked && bttnPressed != habitChipBttn) {
+            habitChipBttn!!.isChecked = false
+            closeSpecificDiv(habitDetailsDiv!!)
+        }
+        else if (todoChip!!.isChecked && bttnPressed != todoChip) {
+            todoChip!!.isChecked = false
+            closeSpecificDiv(todoMessage!!)
+        }
+        else if (moodChip!!.isChecked && bttnPressed != moodChip) {
+            moodChip!!.isChecked = false
+            closeSpecificDiv(moodDiv!!)
         }
     }
 
