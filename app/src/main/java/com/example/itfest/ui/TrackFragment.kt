@@ -13,6 +13,17 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.itfest.R
 import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputLayout
+import com.example.itfest.Habit
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.database
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import java.io.File
+import java.io.FileWriter
+import java.io.PrintWriter
+import java.nio.charset.Charset
+import java.nio.file.Paths
+import java.util.UUID
 
 class TrackFragment : AppCompatActivity() {
     var habitChipBttn :Chip? = null
@@ -24,6 +35,8 @@ class TrackFragment : AppCompatActivity() {
     var moodChip: Chip? = null
     var moodDiv: LinearLayout? = null
     var addTaskBttn: Button? = null
+    val database = Firebase.database.reference
+//    val habitsRef = database.getReference("habits")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +88,9 @@ class TrackFragment : AppCompatActivity() {
                 Log.i(day.toString(), "day")
             }
         }
+
+        val habit = Habit("Drink 2L water", false, "daily")
+        database.child("habits").child(UUID.randomUUID().toString()).setValue(habit)
     }
 
     fun getDaysOfTheWeek() : MutableList<Int> {
