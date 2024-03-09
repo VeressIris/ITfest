@@ -17,7 +17,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="73dp"
             android:hint="hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -30,13 +30,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewbase">
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="Stats" />
+            android:text="Stats"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,10 +46,11 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="205dp"
+                android:layout_width="54dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Thirst" />
+                android:text="Thirst"
+                android:textSize="16sp" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -65,10 +67,11 @@
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="207dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Hunger" />
+                android:text="Hunger"
+                android:textSize="16sp" />
 
             <ProgressBar
                 android:id="@+id/progressBar2"
@@ -85,10 +88,11 @@
 
             <TextView
                 android:id="@+id/textView10"
-                android:layout_width="209dp"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Happiness" />
+                android:text="Happiness"
+                android:textSize="16sp" />
 
             <ProgressBar
                 android:id="@+id/progressBar3"
@@ -106,12 +110,28 @@
         android:layout_marginStart="13dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="18dp"
         android:src="@drawable/base"
-        app:layout_constraintBottom_toTopOf="@+id/linear_layout_bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/parki"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
+    <ImageView
+        android:id="@+id/parki"
+        android:layout_width="415dp"
+        android:layout_height="445dp"
+        android:layout_below="@id/base"
+        android:elevation="-1dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/parki"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
