@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_corners"
+    tools:context=".ui.TrackFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="#F5E8C7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/trackingTitle"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#9E7777"
+            android:text="What would you like to add"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/trackContainer"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="#F5E8C7"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="286dp"
+                android:background="#F5E8C7"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#F5E8C7"
+                    android:orientation="horizontal"
+                    android:paddingStart="13dp">
+
+                    <TextView
+                        android:id="@+id/habitTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Habit"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/habitChip"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:checkable="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/habitDetailsDiv"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:background="@drawable/rounded_corners"
+                    android:backgroundTint="#F5E8C7"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/habitNameInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#9E7777"
+                            android:hint="Title" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/frequencyDiv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#F5E8C7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/frequencyTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#DEBA9D"
+                            android:paddingStart="13dp"
+                            android:text="Frequency"
+                            android:textColor="#000000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#DEBA9D"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/dailyText"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingLeft="13dp"
+                                android:text="Daily"
+                                android:textColor="#000000" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/dailyChip"
+                                android:layout_width="52dp"
+                                android:layout_height="wrap_content"
+                                android:checkable="true" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#DEBA9D"
+                            android:orientation="horizontal"
+                            android:paddingStart="13dp">
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="122dp"
+                                android:layout_height="wrap_content"
+                                android:text="Days of the week"
+                                android:textColor="#000000" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/daysOfTheWeekChip"
+                                android:layout_width="52dp"
+                                android:layout_height="wrap_content"
+                                android:checkable="true" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/daysOfTheWeekListDiv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="0dp"
+                            android:layout_weight="0"
+                            android:alpha="100"
+                            android:orientation="horizontal"
+                            android:padding="0dp"
+                            android:visibility="visible">
+
+                            <CheckBox
+                                android:id="@+id/checkboxMonday"
+                                android:layout_width="58dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:clickable="true"
+                                android:text="M"
+                                android:visibility="visible"
+                                app:buttonIconTint="#6D6875" />
+
+                            <CheckBox
+                                android:id="@+id/checkboxTuesday"
+                                android:layout_width="58dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:clickable="true"
+                                android:text="T"
+                                android:visibility="visible"
+                                app:buttonIconTint="#6D6875" />
+
+                            <CheckBox
+                                android:id="@+id/checkboxWednesday"
+                                android:layout_width="58dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:clickable="true"
+                                android:text="W"
+                                app:buttonIconTint="#6D6875" />
+
+                            <CheckBox
+                                android:id="@+id/checkboxThursday"
+                                android:layout_width="58dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:clickable="true"
+                                android:text="Th"
+                                app:buttonIconTint="#6D6875" />
+
+                            <CheckBox
+                                android:id="@+id/checkboxFriday"
+                                android:layout_width="58dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:baselineAligned="false"
+                                android:clickable="true"
+                                android:text="Fr"
+                                app:buttonIconTint="#6D6875" />
+
+                            <CheckBox
+                                android:id="@+id/checkboxSaturday"
+                                android:layout_width="58dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:clickable="true"
+                                android:text="Sa"
+                                app:buttonIconTint="#6D6875" />
+
+                            <CheckBox
+                                android:id="@+id/checkboxSunday"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:baselineAligned="false"
+                                android:clickable="true"
+                                android:text="Su"
+                                app:buttonIconTint="#6D6875" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-90dp"
+                android:background="#F5E8C7"
+                android:orientation="horizontal"
+                android:paddingStart="13dp"
+                android:translationY="100dp">
+
+                <TextView
+                    android:id="@+id/toDoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To-do"
+                    android:textColor="#000000" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/todoChip"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:outlineAmbientShadowColor="#000000" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/toDoInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners"
+                android:translationY="100dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:backgroundTint="#DEBA9D"
+                    android:hint="To-do:"
+                    android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="#F5E8C7"
+                android:backgroundTint="#F5E8C7"
+                android:orientation="horizontal"
+                android:paddingStart="13dp"
+                android:translationY="100dp">
+
+                <TextView
+                    android:id="@+id/moodTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mood"
+                    android:textColor="#000000" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/moodChip"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:checkable="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/moodOptionsDiv"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:background="@drawable/rounded_corners"
+                android:orientation="vertical"
+                android:translationY="100dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/selectMoodsDiv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/sadCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#9E7777"
+                        android:text="sad"
+                        app:buttonIconTint="#6D6875" />
+
+                    <CheckBox
+                        android:id="@+id/mehCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#9E7777"
+                        android:text="meh"
+                        app:buttonIconTint="#6D6875" />
+
+                    <CheckBox
+                        android:id="@+id/happyCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#9E7777"
+                        android:text="happy"
+                        app:buttonIconTint="#6D6875" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/moodMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:translationY="100dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#DEBA9D"
+                        android:hint="To-do:"
+                        android:textColor="#000000" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
