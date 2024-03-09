@@ -1,14 +1,13 @@
-package com.example.itfest
+package com.example.itfest.ui
 
 import android.os.Bundle
-import android.text.Layout
-import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.itfest.R
 import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputLayout
 
