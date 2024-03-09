@@ -2,14 +2,18 @@ package com.example.itfest.ui.notifications
 
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.GridLayout
+import android.widget.LinearLayout
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
+import androidx.core.view.marginLeft
+import androidx.core.view.setMargins
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -69,13 +73,18 @@ class StatsFragment : Fragment() {
     }
 
     fun generateDayFragment(day: String, tableRow: TableRow) {
-        val frame = FrameLayout(requireContext())
         val text = TextView(context)
         text.text = day
         text.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-        frame.setBackgroundResource(R.drawable.calendar_day_frag)
-        frame.setPadding(12)
-        frame.addView(text)
-        tableRow.addView(frame)
+        text.gravity = TextView.TEXT_ALIGNMENT_CENTER
+        text.setPadding(8)
+        text.setBackgroundResource(R.drawable.calendar_day_frag)
+        val layoutParams = TableRow.LayoutParams(
+            TableRow.LayoutParams.WRAP_CONTENT,
+            TableRow.LayoutParams.WRAP_CONTENT
+        )
+        layoutParams.setMargins(32)
+        text.layoutParams = layoutParams
+        tableRow.addView(text)
     }
 }
