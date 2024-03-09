@@ -20,6 +20,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.itfest.R
 import com.example.itfest.databinding.FragmentStatsBinding
 import java.util.Calendar
+import java.util.Locale
+import java.text.SimpleDateFormat
 
 class StatsFragment : Fragment() {
 
@@ -28,6 +30,10 @@ class StatsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    val calendar = Calendar.getInstance()
+    val currentMonth = calendar.get(Calendar.MONTH)
+    val sdf = SimpleDateFormat("MMMM", Locale.getDefault())
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,8 +46,22 @@ class StatsFragment : Fragment() {
         _binding = FragmentStatsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        getPastDates()
-        generateCalendarUI(binding.daysTable, 31)
+        //generate current month dates
+        val daysTable = binding.daysTable
+        generateCalendarUI(daysTable, calendar.getActualMaximum(Calendar.DAY_OF_MONTH))
+
+        //changing calendar month with bttns
+        binding.prevMonthBttn.setOnClickListener {
+            daysTable.removeAllViews()
+            calendar.add(Calendar.MONTH, -1)
+            generateCalendarUI(daysTable, calendar.getActualMaximum(Calendar.DAY_OF_MONTH))
+        }
+        binding.nextMonthBttn.setOnClickListener {
+            daysTable.removeAllViews()
+            calendar.add(Calendar.MONTH, 1)
+            generateCalendarUI(daysTable, calendar.getActualMaximum(Calendar.DAY_OF_MONTH))
+        }
+
         return root
     }
 
@@ -50,17 +70,10 @@ class StatsFragment : Fragment() {
         _binding = null
     }
 
-    //gets the number of days for previous 2 months
-    fun getPastDates() {
-        val calendar = Calendar.getInstance()
-        val currentMonth = calendar.get(Calendar.MONTH)
-        for (i in 0..3) {
-            calendar.set(Calendar.MONTH, currentMonth - i)
-            Log.i(calendar.getActualMaximum(Calendar.DAY_OF_MONTH).toString(), "date")
-        }
-    }
-
     fun generateCalendarUI(daysTable: TableLayout, daysInMonth: Int) {
+        val monthName = sdf.format(calendar.time)
+        binding.monthText.text = monthName
+
         var tableRow = TableRow(context)
         for (days in 1..daysInMonth) {
             if (days % 7 == 1) {
