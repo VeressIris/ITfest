@@ -264,7 +264,8 @@
                     android:id="@+id/todoChip"
                     android:layout_width="52dp"
                     android:layout_height="wrap_content"
-                    android:checkable="true" />
+                    android:checkable="true"
+                    android:outlineAmbientShadowColor="#000000" />
 
             </LinearLayout>
 
