@@ -16,7 +16,7 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:background="#5C93AA"
+        android:background="#F5E8C7"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
             android:id="@+id/trackingTitle"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#6D6875"
+            android:background="#9E7777"
             android:text="What would you like to add"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -36,24 +36,28 @@
             android:id="@+id/trackContainer"
             android:layout_width="match_parent"
             android:layout_height="600dp"
+            android:background="#F5E8C7"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="286dp"
+                android:background="#F5E8C7"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="#C8C7D7"
-                    android:orientation="horizontal">
+                    android:background="#F5E8C7"
+                    android:orientation="horizontal"
+                    android:paddingStart="13dp">
 
                     <TextView
                         android:id="@+id/habitTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Habit"
+                        android:textAlignment="center"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.Chip
@@ -67,9 +71,9 @@
                 <LinearLayout
                     android:id="@+id/habitDetailsDiv"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="240dp"
                     android:background="@drawable/rounded_corners"
-                    android:backgroundTint="#A8AFD6"
+                    android:backgroundTint="#F5E8C7"
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -80,6 +84,8 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#9E7777"
                             android:hint="Title" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,20 +94,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/rounded_corners"
-                        android:backgroundTint="#A8AFD6"
+                        android:backgroundTint="#F5E8C7"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/frequencyTitle"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
-                            android:background="#F4EDE5"
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#DEBA9D"
+                            android:paddingStart="13dp"
                             android:text="Frequency"
                             android:textColor="#000000" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#DEBA9D"
                             android:orientation="horizontal">
 
                             <TextView
@@ -109,7 +119,7 @@
                                 android:layout_width="275dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:paddingLeft="0dp"
+                                android:paddingLeft="13dp"
                                 android:text="Daily"
                                 android:textColor="#000000" />
 
@@ -124,7 +134,10 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:background="@drawable/rounded_corners"
+                            android:backgroundTint="#DEBA9D"
+                            android:orientation="horizontal"
+                            android:paddingStart="13dp">
 
                             <TextView
                                 android:id="@+id/textView9"
@@ -154,9 +167,10 @@
 
                             <CheckBox
                                 android:id="@+id/checkboxMonday"
-                                android:layout_width="68dp"
+                                android:layout_width="58dp"
                                 android:layout_height="wrap_content"
-                                android:backgroundTint="#673AB7"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
                                 android:clickable="true"
                                 android:text="M"
                                 android:visibility="visible"
@@ -164,8 +178,10 @@
 
                             <CheckBox
                                 android:id="@+id/checkboxTuesday"
-                                android:layout_width="68dp"
+                                android:layout_width="58dp"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
                                 android:clickable="true"
                                 android:text="T"
                                 android:visibility="visible"
@@ -173,19 +189,34 @@
 
                             <CheckBox
                                 android:id="@+id/checkboxWednesday"
-                                android:layout_width="68dp"
+                                android:layout_width="58dp"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
                                 android:clickable="true"
                                 android:text="W"
                                 app:buttonIconTint="#6D6875" />
 
                             <CheckBox
                                 android:id="@+id/checkboxThursday"
-                                android:layout_width="68dp"
+                                android:layout_width="58dp"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
                                 android:clickable="true"
-                                android:text="T"
+                                android:text="Th"
+                                app:buttonIconTint="#6D6875" />
+
+                            <CheckBox
+                                android:id="@+id/checkboxSunday"
+                                android:layout_width="58dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
+                                android:baselineAligned="false"
+                                android:buttonTint="#6D6875"
+                                android:clickable="true"
+                                android:text="Fr"
                                 app:buttonIconTint="#6D6875" />
 
                             <CheckBox
@@ -197,16 +228,20 @@
 
                             <CheckBox
                                 android:id="@+id/checkboxSaturday"
-                                android:layout_width="68dp"
+                                android:layout_width="58dp"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
                                 android:clickable="true"
                                 android:text="Sa"
                                 app:buttonIconTint="#6D6875" />
 
                             <CheckBox
                                 android:id="@+id/checkboxSunday"
-                                android:layout_width="68dp"
+                                android:layout_width="60dp"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_corners"
+                                android:backgroundTint="#9E7777"
                                 android:baselineAligned="false"
                                 android:buttonTint="#6D6875"
                                 android:clickable="true"
@@ -221,8 +256,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#5C93AA"
+                android:layout_marginTop="-90dp"
+                android:background="#F5E8C7"
                 android:orientation="horizontal"
+                android:paddingStart="13dp"
                 android:translationY="100dp">
 
                 <TextView
@@ -251,7 +288,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_corners"
-                    android:backgroundTint="#A8AFD6"
+                    android:backgroundTint="#DEBA9D"
                     android:hint="hint"
                     android:textColor="#000000" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -259,9 +296,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:background="#84AABC"
-                android:backgroundTint="#84AABC"
+                android:background="#F5E8C7"
+                android:backgroundTint="#F5E8C7"
                 android:orientation="horizontal"
+                android:paddingStart="13dp"
                 android:translationY="100dp">
 
                 <TextView
@@ -281,7 +319,7 @@
             <LinearLayout
                 android:id="@+id/moodOptionsDiv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="43dp"
                 android:background="@drawable/rounded_corners"
                 android:orientation="vertical"
                 android:translationY="100dp">
@@ -297,6 +335,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#9E7777"
                         android:text="sad" />
 
                     <CheckBox
@@ -304,6 +344,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@drawable/rounded_corners"
+                        android:backgroundTint="#9E7777"
                         android:text="meh" />
 
                     <CheckBox
@@ -312,7 +354,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/rounded_corners"
-                        android:backgroundTint="#A8AFD6"
+                        android:backgroundTint="#9E7777"
                         android:text="happy" />
 
                 </LinearLayout>
