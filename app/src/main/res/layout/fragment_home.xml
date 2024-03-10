@@ -26,11 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Habits:"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="249dp">
+            android:layout_height="233dp"
+            android:background="#F4CFC7">
 
             <LinearLayout
                 android:id="@+id/habitsContainer"
@@ -44,11 +46,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="To-do:"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="385dp"
+            android:background="#F4CFC7">
 
             <LinearLayout
                 android:id="@+id/toDoContainer"
