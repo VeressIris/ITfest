@@ -32,7 +32,10 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="233dp"
-            android:background="#F4CFC7">
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="#F4CFC7"
+            android:padding="8dp">
 
             <LinearLayout
                 android:id="@+id/habitsContainer"
@@ -52,7 +55,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="385dp"
-            android:background="#F4CFC7">
+            android:background="#F4CFC7"
+            android:padding="8dp">
 
             <LinearLayout
                 android:id="@+id/toDoContainer"
@@ -62,7 +66,7 @@
         </ScrollView>
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/trackBttn"
         android:layout_width="50dp"
         android:layout_height="50dp"
