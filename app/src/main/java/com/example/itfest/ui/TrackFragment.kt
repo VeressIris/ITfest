@@ -71,8 +71,8 @@ class TrackFragment : AppCompatActivity() {
                     createMood()
                 }
             }
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
