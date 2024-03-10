@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "849436305130",
+    "firebase_url": "https://itfest-a79ca-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "itfest-a79ca",
+    "storage_bucket": "itfest-a79ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849436305130:android:27a4f97933524f7b4bd993",
+        "android_client_info": {
+          "package_name": "com.example.itfest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGW8VuPReb5fAF7FyRXArMTMTkwdLE-WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
