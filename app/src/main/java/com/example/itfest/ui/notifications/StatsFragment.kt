@@ -19,6 +19,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.itfest.R
 import com.example.itfest.databinding.FragmentStatsBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import java.util.Calendar
 import java.util.Locale
 import java.text.SimpleDateFormat
