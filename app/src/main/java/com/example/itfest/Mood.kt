@@ -1,3 +1,5 @@
 package com.example.itfest
 
-data class Mood(val currentMood: String, val message: String?)
+import java.time.LocalDate
+
+data class Mood(val currentMood: String, val dateAdded: LocalDate = LocalDate.now())

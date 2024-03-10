@@ -14,6 +14,7 @@ import com.example.itfest.R
 import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputLayout
 import com.example.itfest.Habit
+import com.example.itfest.Mood
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.example.itfest.Task
@@ -30,7 +31,6 @@ class TrackFragment : AppCompatActivity() {
     var moodDiv: LinearLayout? = null
     var addTaskBttn: Button? = null
     val database = Firebase.database.reference
-//    val habitsRef = database.getReference("habits")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,10 +65,30 @@ class TrackFragment : AppCompatActivity() {
                     createToDo()
                 }
                 moodChip -> {
-
+                    createMood()
                 }
             }
         }
+    }
+
+    fun createMood() {
+        val sadCheckBox = findViewById<CheckBox>(R.id.sadCheckBox)
+        val mehCheckBox = findViewById<CheckBox>(R.id.mehCheckbox)
+        val happyCheckBox = findViewById<CheckBox>(R.id.happyCheckbox)
+
+        var mood: String? = null
+        if (sadCheckBox.isChecked) {
+            mood = "sad"
+        }
+        else if (mehCheckBox.isChecked) {
+            mood = "meh"
+        }
+        else if (happyCheckBox.isChecked) {
+            mood = "happy"
+        }
+
+        val currentMood = Mood(mood!!)
+        database.child("moods").child(UUID.randomUUID().toString()).setValue(currentMood)
     }
 
     fun createHabit() {
@@ -77,7 +97,7 @@ class TrackFragment : AppCompatActivity() {
         val habitName = habitNameInput.editText?.text.toString()
         var frequency: String? = null
 
-        //get frequency
+        //set frequency
         val dailyChip = findViewById<Chip>(R.id.dailyChip)
         var habit: Habit? = null
         if(dailyChip.isChecked) {
@@ -94,6 +114,7 @@ class TrackFragment : AppCompatActivity() {
     fun createToDo() {
         val toDoTitle = todoMessage!!.editText!!.text
         val toDo = Task(toDoTitle.toString(), false)
+
         database.child("todos").child(UUID.randomUUID().toString()).setValue(toDo)
     }
 
