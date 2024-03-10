@@ -108,6 +108,8 @@ class HomeFragment : Fragment() {
 
         val title = TextView(requireContext())
         title.text = task.name
+        title.setTextColor(Color.BLACK)
+        title.textSize = 16f
         val checkBox = CheckBox(requireContext())
 
         //set checkbox listener
