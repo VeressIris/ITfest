@@ -11,6 +11,7 @@
         android:id="@+id/parentLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#C6C09C"
         android:orientation="vertical"
         android:padding="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,13 +60,16 @@
         android:id="@+id/trackBttn"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/calendar_day_frag"
+        android:background="@drawable/buton"
+        android:backgroundTint="#FFC59E"
+        android:drawableTint="#BCA5A5"
         android:text="➕"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.886"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintVertical_bias="0.866" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

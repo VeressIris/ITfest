@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Pet's name"
+        app:hintTextColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent">
@@ -18,7 +19,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="73dp"
-            android:hint="hint" />
+            android:backgroundTint="#E87F3F"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -36,8 +40,10 @@
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:background="#162114"
             android:text="Stats"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,15 +55,19 @@
                 android:layout_width="54dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#D4F3B7"
                 android:text="Thirst"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:gravity="center"/>
 
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#CCEA72" />
         </LinearLayout>
 
         <LinearLayout
@@ -70,20 +80,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#D4F3B7"
                 android:text="Hunger"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:gravity="center"/>
 
             <ProgressBar
                 android:id="@+id/progressBar2"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#CCEA72" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -91,15 +105,19 @@
                 android:layout_width="56dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#D4F3B7"
+                android:gravity="center"
                 android:text="Happiness"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <ProgressBar
                 android:id="@+id/progressBar3"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#CCEA72" />
         </LinearLayout>
     </LinearLayout>
 
