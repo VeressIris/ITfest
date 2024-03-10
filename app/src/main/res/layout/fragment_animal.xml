@@ -105,6 +105,7 @@
                 android:layout_width="56dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:allowUndo="true"
                 android:background="#D4F3B7"
                 android:gravity="center"
                 android:text="Happiness"
