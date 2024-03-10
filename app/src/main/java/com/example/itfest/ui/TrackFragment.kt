@@ -56,6 +56,8 @@ class TrackFragment : AppCompatActivity() {
         moodDiv = findViewById(R.id.moodOptionsDiv)
         addTaskBttn = findViewById(R.id.addBttn)
 
+        supportActionBar?.hide()
+
         setButtonListeners()
 
         addTaskBttn!!.setOnClickListener {
