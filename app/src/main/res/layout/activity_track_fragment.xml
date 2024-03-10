@@ -30,7 +30,7 @@
             android:background="#9E7777"
             android:text="What would you like to add"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/trackContainer"
@@ -58,7 +58,8 @@
                         android:layout_height="wrap_content"
                         android:text="Habit"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/habitChip"
@@ -86,7 +87,8 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/rounded_corners"
                             android:backgroundTint="#9E7777"
-                            android:hint="Title" />
+                            android:hint="Title"
+                            android:textSize="20sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <LinearLayout
@@ -105,7 +107,8 @@
                             android:backgroundTint="#DEBA9D"
                             android:paddingStart="13dp"
                             android:text="Frequency"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -121,7 +124,8 @@
                                 android:layout_weight="1"
                                 android:paddingLeft="13dp"
                                 android:text="Daily"
-                                android:textColor="#000000" />
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
 
                             <com.google.android.material.chip.Chip
                                 android:id="@+id/dailyChip"
@@ -144,7 +148,8 @@
                                 android:layout_width="122dp"
                                 android:layout_height="wrap_content"
                                 android:text="Days of the week"
-                                android:textColor="#000000" />
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
 
                             <com.google.android.material.chip.Chip
                                 android:id="@+id/daysOfTheWeekChip"
@@ -258,7 +263,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="To-do"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/todoChip"
@@ -282,7 +288,8 @@
                     android:background="@drawable/rounded_corners"
                     android:backgroundTint="#DEBA9D"
                     android:hint="To-do:"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -299,7 +306,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mood"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/moodChip"
