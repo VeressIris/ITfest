@@ -1,5 +1,6 @@
 package com.example.itfest.ui.notifications
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
@@ -91,9 +92,10 @@ class StatsFragment : Fragment() {
         val text = TextView(context)
         text.text = day
         text.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+        text.setTextColor(Color.BLACK)
         text.gravity = TextView.TEXT_ALIGNMENT_CENTER
         text.setPadding(8)
-        text.setBackgroundResource(R.drawable.calendar_day_frag)
+        text.setBackgroundResource(R.drawable.buton)
         val layoutParams = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
             TableRow.LayoutParams.WRAP_CONTENT
