@@ -14,15 +14,9 @@ import com.example.itfest.R
 import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputLayout
 import com.example.itfest.Habit
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.database
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import java.io.File
-import java.io.FileWriter
-import java.io.PrintWriter
-import java.nio.charset.Charset
-import java.nio.file.Paths
+import com.example.itfest.Task
 import java.util.UUID
 
 class TrackFragment : AppCompatActivity() {
@@ -68,7 +62,7 @@ class TrackFragment : AppCompatActivity() {
                     createHabit()
                 }
                 todoChip -> {
-
+                    createToDo()
                 }
                 moodChip -> {
 
@@ -81,16 +75,28 @@ class TrackFragment : AppCompatActivity() {
         //get habit name
         val habitNameInput = findViewById<TextInputLayout>(R.id.habitNameInput)
         val habitName = habitNameInput.editText?.text.toString()
-        val frequency: String? = null
-        if (daysOfTheWeekChip!!.isChecked) {
+        var frequency: String? = null
+
+        //get frequency
+        val dailyChip = findViewById<Chip>(R.id.dailyChip)
+        var habit = Habit(habitName, false)
+        if(dailyChip.isChecked) {
+            frequency = "daily"
+        }
+        else if(daysOfTheWeekChip!!.isChecked) {
             val checkedDays = getDaysOfTheWeek()
             for (day in checkedDays) {
                 Log.i(day.toString(), "day")
             }
         }
 
-        val habit = Habit("Drink 2L water", false, "daily")
         database.child("habits").child(UUID.randomUUID().toString()).setValue(habit)
+    }
+
+    fun createToDo() {
+        val toDoTitle = todoMessage!!.editText!!.text
+        val toDo = Task(toDoTitle.toString(), false)
+        database.child("todos").child(UUID.randomUUID().toString()).setValue(toDo)
     }
 
     fun getDaysOfTheWeek() : MutableList<Int> {
