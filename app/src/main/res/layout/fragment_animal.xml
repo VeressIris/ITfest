@@ -121,7 +121,6 @@
         android:id="@+id/parki"
         android:layout_width="415dp"
         android:layout_height="445dp"
-        android:layout_below="@id/base"
         android:elevation="-1dp"
         android:scaleType="centerCrop"
         android:src="@drawable/parki"
