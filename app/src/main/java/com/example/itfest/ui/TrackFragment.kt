@@ -1,5 +1,6 @@
 package com.example.itfest.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,12 +9,14 @@ import android.widget.CheckBox
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.itfest.R
 import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputLayout
 import com.example.itfest.Habit
+import com.example.itfest.MainActivity
 import com.example.itfest.Mood
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -68,6 +71,8 @@ class TrackFragment : AppCompatActivity() {
                     createMood()
                 }
             }
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
         }
     }
 
