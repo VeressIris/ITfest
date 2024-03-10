@@ -79,15 +79,13 @@ class TrackFragment : AppCompatActivity() {
 
         //get frequency
         val dailyChip = findViewById<Chip>(R.id.dailyChip)
-        var habit = Habit(habitName, false)
+        var habit: Habit? = null
         if(dailyChip.isChecked) {
-            frequency = "daily"
+            habit = Habit(habitName, false, "daily")
         }
         else if(daysOfTheWeekChip!!.isChecked) {
-            val checkedDays = getDaysOfTheWeek()
-            for (day in checkedDays) {
-                Log.i(day.toString(), "day")
-            }
+            val checkedDays = getCheckedDays()
+            habit = Habit(habitName, false, null, checkedDays)
         }
 
         database.child("habits").child(UUID.randomUUID().toString()).setValue(habit)
@@ -99,7 +97,7 @@ class TrackFragment : AppCompatActivity() {
         database.child("todos").child(UUID.randomUUID().toString()).setValue(toDo)
     }
 
-    fun getDaysOfTheWeek() : MutableList<Int> {
+    fun getCheckedDays() : MutableList<Int> {
         val list: MutableList<Int> = mutableListOf()
         for (i in 0 until daysOfTheWeekList!!.childCount) {
             val day = daysOfTheWeekList!!.getChildAt(i)
@@ -110,10 +108,6 @@ class TrackFragment : AppCompatActivity() {
             }
         }
         return list
-    }
-
-    fun getCheckedDays() {
-
     }
 
     fun openSpecificDiv(div: LinearLayout, chipBttn: Chip) {
