@@ -24,6 +24,7 @@ import com.google.firebase.database.snapshots
 import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class HomeFragment : Fragment() {
 
@@ -90,7 +91,7 @@ class HomeFragment : Fragment() {
 
     fun displayToDos(list: MutableList<Task>) {
         for (task in list) {
-            if (task.dateAdded == LocalDate.now()) {
+            if (LocalDate.parse(task.dateAdded, DateTimeFormatter.ISO_LOCAL_DATE) == LocalDate.now()) {
                 createTaskLayout(task, todoContainer!!)
                 Log.i("Td todo:", task.name)
             }
